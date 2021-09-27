@@ -1,0 +1,19 @@
+---
+
+galaxy_info:
+  role_name: docker_arm
+  author: blalop
+  description: Docker Role for ARM
+  min_ansible_version: 2.8.0
+  license: MIT
+  galaxy-tags:
+    - system
+    - networking
+    - web
+    - raspberry
+    - docker
+  platforms:
+    - name: Debian
+      versions:
+        - buster
+        - bullseye

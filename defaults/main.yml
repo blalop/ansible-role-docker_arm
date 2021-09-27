@@ -1,0 +1,4 @@
+---
+docker_install_compose: true
+
+docker_daemon_options: []

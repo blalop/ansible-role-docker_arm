@@ -1,0 +1,11 @@
+---
+
+service:
+  docker:
+    enabled: true
+    running: true
+
+command:
+  hello-world:
+    exec: "docker run hello-world"
+    exit-status: 0

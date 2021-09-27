@@ -1,0 +1,29 @@
+---
+dependency:
+  name: galaxy
+
+driver:
+  name: docker
+
+lint: |
+  yamllint .
+  ansible-lint .
+
+platforms:
+  - name: docker_arm
+    groups:
+      - docker_arm_group
+    image: "geerlingguy/docker-${MOLECULE_DISTRO:-debian11}-ansible:latest"
+    pre_build_image: true
+    privileged: true
+    volumes:
+      - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
+    command: '/lib/systemd/systemd'
+    stop_signal: 'RTMIN+3'
+    dns_servers:
+      - 8.8.8.8
+
+provisioner:
+  name: ansible
+verifier:
+  name: ansible
